@@ -26,7 +26,8 @@
                  [conman "0.5.8"]
                  [com.h2database/h2 "1.4.191"]
                  [org.webjars/webjars-locator-jboss-vfs "0.1.0"]
-                 [luminus-immutant "0.2.0"]]
+                 [luminus-immutant "0.2.0"]
+                 [twitter-api "0.7.8"]]
 
   :min-lein-version "2.0.0"
 
@@ -42,7 +43,7 @@
 
   :profiles
   {:uberjar {:omit-source true
-             
+
              :aot :all
              :uberjar-name "cta_jun.jar"
              :source-paths ["env/prod/clj"]
@@ -56,7 +57,7 @@
                                  [ring/ring-devel "1.4.0"]
                                  [pjstadig/humane-test-output "0.8.0"]]
                   :plugins      [[com.jakemccrary/lein-test-refresh "0.14.0"]]
-                  
+
                   :source-paths ["env/dev/clj" "test/clj"]
                   :resource-paths ["env/dev/resources"]
                   :repl-options {:init-ns user}
