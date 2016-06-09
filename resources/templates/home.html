@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="jumbotron">
-    <h1>Welcome to cta_jun</h1>
-    <p>Time to start building your site!</p>
-    <p><a class="btn btn-primary btn-lg" href="http://luminusweb.net">Learn more &raquo;</a></p>
-  </div>
-
   <div class="row">
-    <div class="span12">
-    {{docs|markdown}}
+    <div class="col-xs-12">
+      <form class="form-inline" method="GET" action="{{servlet-context}}/user">
+        <div class="form-group">
+          <label for="screen-name">Screen Name</label>
+          <input type="text" class="form-control" id="screen-name" name="screen-name" value="" placeholder="Pick a twitter user to pry">
+        </div>
+        <button type="submit" class="btn btn-sm btn-default">
+          validate
+        </button>
+      </form>
     </div>
   </div>
 {% endblock %}

@@ -21,3 +21,9 @@
 (defn get-timeline [user-screen-name last-n-tweets]
   "shorhand function to extract the content of the twitter api rest resource statuses/user_timeline"
   (:body (statuses-user-timeline :oauth-creds my-creds :params {:screen-name user-screen-name :count last-n-tweets})))
+
+(defn show-user [user-screen-name]
+  (:body (users-show :oauth-creds my-creds :params {:screen-name user-screen-name})))
+
+(defn show-user-hashtags [user-screen-name]
+  (normalize-hashtags (extract-hashtags (get-timeline user-screen-name 500))))

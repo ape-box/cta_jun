@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="row">
+    <div class="col-sm-12">
+      <p>
+        {{screen-name}}
+      </p>
+      <ol>
+        {% for h in hashtags %}
+          <li>{{h}}</li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+{% endblock %}
